@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 > ## github设置SSH密钥
 
 - #### 作用
@@ -41,3 +42,13 @@
      <!--username为github用户名-->
 
 - #### 可能遇到的问题
+=======
+> # 设置SSH
+
+1. 进入~/.ssh目录，查看是否存在ssh密钥
+
+   
+
+   ![image-20220313142113006](C:\Users\10506\AppData\Roaming\Typora\typora-user-images\image-20220313142113006.png)
+
+>>>>>>> 4b94e792662603227842883b1287e5ca385988c7
