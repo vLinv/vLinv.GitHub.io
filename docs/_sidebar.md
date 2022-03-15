@@ -1,3 +1,3 @@
 - [**github设置SSH密钥**](/setsshkey/)
 
-- [**扫雷**](/minesweeper/)
+- [**扫雷**](/mineSweeper/)
