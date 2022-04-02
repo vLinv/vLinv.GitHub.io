@@ -14,6 +14,19 @@
 <body>
   <div id="app"></div>
   <script>
+    const gitalk = new Gitalk({
+      clientID: '07893746222ca818b824',
+      clientSecret: 'bc155bb72713e9d239a81aa6c98253992d6748c9',
+      repo: 'https://github.com/vLinv/vLinv.GitHub.io.git',
+      owner: 'vLinv',
+      admin: ['vLinv'],
+      // facebook-like distraction free mode
+      id: location.pathname,
+      distractionFreeMode: false,
+      loadSidebar: true,
+      maxLevel: 5,
+      subMaxLevel: 4
+    })
     window.$docsify = {
       name: 'vLinv docsify',
       repo: 'https://github.com/vLinv/vLinv.GitHub.io.git',
@@ -30,34 +43,18 @@
       formatUpdated: function (time) {
         return time;
       },
-      disqus: 'shortname',
-      count: {
-        countable: true,
-        fontsize: '0.9em',
-        color: 'rgb(90,90,90)',
-        language: 'chinese'
-      }
+      // count: {
+      //   countable: true,
+      //   fontsize: '0.9em',
+      //   color: 'rgb(90,90,90)',
+      //   language: 'chinese'
+      // },
+      disqus: 'shortname'
     }
   </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
-  <script>
-    const gitalk = new Gitalk({
-      clientID: '07893746222ca818b824',
-      clientSecret: 'bc155bb72713e9d239a81aa6c98253992d6748c9',
-      repo: 'https://github.com/vLinv/vLinv.GitHub.io.git',
-      owner: 'vLinv',
-      admin: ['vLinv'],
-      // facebook-like distraction free mode
-      // id: location.pathname,
-      distractionFreeMode: false,
-      loadSidebar: true,
-      maxLevel: 5,
-      subMaxLevel: 4
-    })
-  </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script>
-  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script>
