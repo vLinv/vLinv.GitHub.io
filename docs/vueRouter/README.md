@@ -27,9 +27,90 @@ Vue Router是Vue.js的官方路由。
 
   路由的占位符，会显示当前路由对应的组件，且可以嵌套。
 
-  如下图所示，假如我们把router-view放在**section**中，那么切换路由时，**section**中的组件会根据路由表进行切换，且**header**与**sidebar**不变。
+  - 如下图所示，假如我们把router-view放在**section**中，那么切换路由时，**section**中的组件会根据路由表进行切换，且**header**与**sidebar**不变。
 
-  ![](F:\linjiabin\work-files\vLinv.GitHub.io\docs\assets\img\VueRouter\vueRouter_01.png)
+    ![](..\assets\img\VueRouter\vueRouter_01.png)
+
+  - 实例
+
+    1. Home.vue代码&效果图：
+
+       ```html
+       <template>
+         <div id="app">
+           <div class="header">
+             <h1>header</h1>
+           </div>
+           <div class="sidebar">
+             <h1>sidebar</h1>
+           </div>
+           <div class="section">
+             <router-view />
+           </div>
+         </div>
+       </template>
+       ```
+
+       <img src="..\assets\img\VueRouter\vueRouter_03.png" alt="vueRouter_03"  />
+
+    2. router.js代码，(此时**路由表constantRoutes**中没有内容，因此router-view无法进行渲染，因为判断不了当前路由应该渲染哪个组件)
+
+       ```js
+       import Vue from 'vue'
+       import Router from 'vue-router'
+       Vue.use(Router)
+       
+       const constantRoutes = [
+         
+       ];
+       
+       const router = new Router({
+         mode: 'hash',
+         scrollBehavior: () => ({ y: 0 }),
+         routes: constantRoutes
+       })
+       
+       export default router
+       ```
+
+    3. 为**路由表constantRoutes**添加路由组件映射关系
+
+       ```js
+       // 引入组件写法1
+       import section01 from '@/views/section_01/index'
+       
+       // section01组件对应两个路由，即当路由为'/'或'/section01'时都会渲染section01组件
+       // 引入组件有两种写法，区别在于写法2只会在访问该路由时加载(只会加载一次)，即路由懒加载。
+       const constantRoutes = [
+         {
+           path: '/',
+           component: section01
+         },
+         {
+           path: '/section01',
+           component: section01
+         },
+         {
+           path: '/section02',
+            // 引入组件写法2
+           component: () => import('@/views/section_02/index')
+         }
+       ];
+       ```
+
+    4. 添加了路由表后的效果图
+
+       路由为'/'：
+
+       <img src="..\assets\img\VueRouter\vueRouter_04.png" alt="vueRouter_04" style="zoom: 25%;" />
+
+       路由为'/section01':
+
+       <img src="..\assets\img\VueRouter\vueRouter_05.png" alt="vueRouter_05" style="zoom: 25%;" />
+
+       路由为'/section02':
+
+       <img src="..\assets\img\VueRouter\vueRouter_06.png" alt="vueRouter_06" style="zoom:25%;" />
 
 - router-link
 
