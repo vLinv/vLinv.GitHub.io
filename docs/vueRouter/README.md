@@ -1,0 +1,24 @@
+### 介绍
+Vue Router是Vue.js的官方路由。
+### 作用
+本质就是管理Vue.js中的路由与组件的映射关系。在传统的前端项目中，每个页面对应一个HTML文件，每次切换路由则加载对应的HTML文件。而在Vue项目中，一般只有一个HTML文件，切换路由改变的则是组件，无需请求新的HTML文件。
+### 安装
+- 直接下载/CDN
+
+  访问 [https://unpkg.com/vue-router@4](https://unpkg.com/vue-router@4) 下载
+
+- npm
+
+  `npm install vue-router@4`
+
+### 基本概念
+
+- SPA
+
+  单页Web应用（single page web application，SPA）： SPA 是一种特殊的 Web 应用，是加载单个 HTML 页面并在用户与应用程序交互时动态更新该页面。所有的活动都在于一个 Web 页面中进行，仅在该 Web 页面初始化时加载相应的 HTML 、 JavaScript 、 CSS 。一旦页面加载完成， SPA 不会因为用户的操作而进行页面(HTML)的重新加载或跳转，而是利用 JavaScript 动态的变换 HTML（采用的是 div 切换显示和隐藏），从而实现UI与用户的交互。在 SPA 应用中，应用加载之后就不会再有整页刷新。相反，展示逻辑预先加载，并有赖于内容Region（区域）中的视图切换来展示内容。
+
+  **简单来说，SPA就是一个页面中，通过js来控制展示的内容，而不需要重新加载新的HTML。**
+
+- 路由表
+
+  路由与组件的对应关系表，每个路由对应一个或多个组件，在切换路由时根据路由表来查找匹配的组件后进行渲染。
