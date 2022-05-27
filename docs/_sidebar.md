@@ -1,2 +1,3 @@
 - [**github设置SSH密钥**](/setsshkey/)
 - [**vue-router**](/vueRouter/)
+- [**vuex**](/vuex/)
